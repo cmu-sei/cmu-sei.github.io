@@ -1,0 +1,81 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+//
+// Provides mixins that define styles and functions that can be re-used
+// throughout the site.
+//
+
+
+//
+// breakpoint
+//
+// Chris Coyier's method for creating media queries.
+// See: http://css-tricks.com/media-queries-sass-3-2-and-codekit/
+// Make up **meaningful** names for your breakpoints so that you
+// and the members of your team can understand and remember them.
+// Also, adjust this mixin for as many breakpoints as you need.
+// You'll likely need finer control for things like font size
+// adjustments, so the "responsive" mixin above can help fill in
+// the gaps.
+//
+// This is currently set up as mobile first, expanding upwards.
+// You'll need to change "min-width" to "max-width" if you're
+// working from the desktop down.
+//
+
+@mixin breakpoint($breakpoint, $media: all) {
+
+  // Change these values as required
+  $small: 40em; // 0, 640px
+  $medium: 64em; // 641px, 1024px
+  $large: 90em; // 1025px, 1440px
+  $xlarge: 120em; // 1441px, 1920px
+  $xxlarge: 120.063em; // 1921px
+
+  @if $breakpoint == small {
+    @media only #{$media} and (max-width: $small) {
+      @content;
+    }
+  } @elseif $breakpoint == medium {
+    @media only #{$media} and (max-width: $medium) {
+      @content;
+    }
+  } @else if $breakpoint == large {
+    @media only #{$media} and (max-width: $large) {
+      @content;
+    }
+  } @else if $breakpoint == xlarge {
+    @media only #{$media} and (max-width: $xlarge) {
+      @content;
+    }
+  } @else if $breakpoint == xxlarge {
+    @media only #{$media} and (max-width: $xxlarge) {
+      @content;
+    }
+  } @else {
+    @media only #{$media} and (max-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+//
+// font-size
+//
+// Create a fully formed type style (sizing and vertical rhythm) by passing in a
+// single value, e.g.:
+//
+// `@include font-size(10px);`
+//
+// Thanks to @redclov3r for the `line-height` Sass:
+// twitter.com/redclov3r/status/250301539321798657
+//
+
+@mixin font-size($font-size, $line-height: true) {
+  font-size: $font-size;
+  font-size: ($font-size / $base-font-size)*1rem;
+  @if $line-height == true {
+    line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+  }
+}

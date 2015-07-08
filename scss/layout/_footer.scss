@@ -1,0 +1,18 @@
+// ==========================================================================
+// Footer Layout
+// ==========================================================================
+//
+// Custom layout for the footer.
+//
+
+
+footer {
+  background-color: $footer-background-color;
+  padding: 25px;
+}
+
+.footer__copyright,
+.footer__description {
+  font-size: .75em;
+  margin: 0;
+}

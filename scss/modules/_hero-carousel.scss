@@ -1,0 +1,159 @@
+// ==========================================================================
+// Hero Spot on Homepage
+// ==========================================================================
+//
+// Creates a large photo at the top of the page that adjusts to screensize. It also
+// adds the navigation menu over top of it so that it the nav sits over the background.
+// The content is added using JavaScript due to the way we must pull in information
+// from GitHub dynaimically.
+//
+//<section class="hero">
+//  <div class="row">
+//    <div class="large-12 medium-12 small-12 columns">
+//      <div class="hero-carousel__wrapper">
+//        <div id="hero-carousel" class="owl-carousel owl-theme">
+//          <div class="hero__item hero--item-0">
+//            <div id="hero-item-0" class="hero-item__wrapper">
+//              <h2 class="hero-item__title"></h2>
+//              <p class="hero-item__description hide-for-small"></p>
+//              <ul class="hero-item__meta-list">
+//                <li class="hero-item__meta-item hero-item__meta-item--star"><i class="fa fa-star"></i><span></span></li>
+//                <li class="hero-item__meta-item hero-item__meta-item--fork"><i class="fa fa-code-fork"></i><span></span></li>
+//              </ul>
+//            </div>
+//            <div class="hero-item__controls">
+//              <div class="hero-item--left left"><a class="hero-control-prev" href="#"><i class="fa fa-chevron-left"></i></a></div>
+//              <div class="hero-item--right right"><a class="hero-control-next" href="#"><i class="fa fa-chevron-right"></i></a></div>
+//            </div>
+//          </div>
+//          <div id="hero-item-1" class="hero__item hero--item-1">
+//            <div class="hero-item__wrapper">
+//              <h2 class="hero-item__title"></h2>
+//              <p class="hero-item__description hide-for-small"></p>
+//              <ul class="hero-item__meta-list">
+//                <li class="hero-item__meta-item hero-item__meta-item--star"><i class="fa fa-star"></i><span></span></li>
+//                <li class="hero-item__meta-item hero-item__meta-item--fork"><i class="fa fa-code-fork"></i><span></span></li>
+//              </ul>
+//            </div>
+//          </div>
+//        </div>
+//      </div>
+//    </div>
+//  </div>
+//</section>
+//
+
+
+// Vertically and horizontally aligns the overaly block within the carousel
+// that displays the project information.
+
+.hero-item__wrapper {
+  background-color: rgba(0, 0, 0, .50);
+  color: $color-white;
+  left: 50%;
+  margin: 0 auto;
+  min-width: 800px;
+  padding: 1em;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  @include breakpoint(medium) {
+    min-width: 500px;
+  }
+
+  @include breakpoint(small) {
+    min-width: 350px;
+  }
+}
+
+// Specifies the minimum height of the floating text
+// that appears over the carousel for the project.
+
+.hero__item {
+  min-height: 300px;
+}
+
+
+// Stretch the background image to cover the entire background
+
+.hero-item {
+  background-size: cover;
+}
+
+// Setup background images for each featured item in the carousel
+.hero--item-0 {
+  background: url('../assets/img/carousel-1.jpg') center center no-repeat;
+}
+
+.hero--item-1 {
+  background: url('../assets/img/carousel-2.jpg') center center no-repeat;
+}
+
+.hero--item-2 {
+  background: url('../assets/img/carousel-3.jpg') center center no-repeat;
+}
+
+.hero--item-3 {
+  background: url('../assets/img/carousel-4.jpg') center center no-repeat;
+}
+
+.hero--item-4 {
+  background: url('../assets/img/carousel-5.jpg') center center no-repeat;
+}
+
+// Controls for left and right
+
+.hero-item__controls {
+  font-size: 2em;
+  padding: 0 .5em;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 100%;
+
+  .hero-control-prev {
+    float: left;
+  }
+
+  .hero-control-next {
+    float: right;
+  }
+
+  a {
+    color: $color-white;
+  }
+}
+
+// Project title styling
+
+.hero-item__title {
+  font-size: rem-calc(36px);
+  font-weight: bold;
+
+  @include breakpoint(small) {
+    font-size: rem-calc(24px);
+    line-height: rem-calc(30px);
+  }
+
+  a {
+    color: $color-white;
+  }
+}
+
+// Star and fork styles
+
+.hero-item__meta-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-item__meta-item {
+  display: inline-block;
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-right: .5em;
+}

@@ -1,0 +1,145 @@
+@charset 'UTF-8';
+
+// ==========================================================================
+// Initialization Rules
+// ==========================================================================
+//
+// These rules level the playing field by using resets/normalize styles
+// and provide the settings to Foundation.
+//
+
+@import 'base/reset';
+@import 'base/normalize';
+@import 'base/settings';
+@import 'base/custom-settings';
+
+// ==========================================================================
+// Foundation
+// ==========================================================================
+//
+// Foundation SASS components all at once or piece by piece.
+//
+
+// To import all of foundation
+// @import 'foundation';
+
+// If you want to pick and choose which pieces of Foundation you want, the
+// pieces just uncomment the components below you need:
+
+@import 'foundation/components/block-grid';
+@import 'foundation/components/clearing';
+@import 'foundation/components/grid';
+@import 'foundation/components/type';
+@import 'foundation/components/visibility';
+
+//   @import 'foundation/components/accordion',
+//   @import 'foundation/components/alert-boxes',
+//   @import 'foundation/components/breadcrumbs',
+//   @import 'foundation/components/button-groups',
+//   @import 'foundation/components/buttons',
+//   @import 'foundation/components/dropdown',
+//   @import 'foundation/components/dropdown-buttons',
+//   @import 'foundation/components/flex-video',
+//   @import 'foundation/components/forms',
+//   @import 'foundation/components/inline-lists',
+//   @import 'foundation/components/joyride',
+//   @import 'foundation/components/keystrokes',
+//   @import 'foundation/components/labels',
+//   @import 'foundation/components/magellan',
+//   @import 'foundation/components/orbit',
+//   @import 'foundation/components/pagination',
+//   @import 'foundation/components/panels',
+//   @import 'foundation/components/pricing-tables',
+//   @import 'foundation/components/progress-bars',
+//   @import 'foundation/components/reveal',
+//   @import 'foundation/components/side-nav',
+//   @import 'foundation/components/split-buttons',
+//   @import 'foundation/components/sub-nav',
+//   @import 'foundation/components/switches',
+//   @import 'foundation/components/tables',
+//   @import 'foundation/components/tabs',
+//   @import 'foundation/components/thumbs',
+//   @import 'foundation/components/tooltips',
+//   @import 'foundation/components/top-bar',
+//   'foundation/components/offcanvas',
+
+
+// ==========================================================================
+// Base Rules
+// ==========================================================================
+//
+// The defaults. They are almost exclusively single element selectors but it
+// could include attribute selectors, pseudo-class selectors, child selectors
+// or sibling selectors. Essentially, a base style says that wherever this
+// element is on the page, it should look like this.
+//
+
+@import 'base/mixins';
+@import 'base/helpers';
+@import 'base/base';
+
+// ==========================================================================
+// Layout Rules
+// ==========================================================================
+//
+// These divide the page into sections. Layouts hold one or more modules
+// together. They specify all types of layout containers, such as header,
+// footer, content, sidebar, etc.
+//
+
+@import 'layout/header';
+@import 'layout/footer';
+
+// ==========================================================================
+// Module Rules
+// ==========================================================================
+//
+// Modules are standalone, reusable components that have no knowledge of
+// their parent container. They are the callouts, the sidebar sections, the
+// product lists and so on. Their only dependencies are the app's base styles.
+//
+// We can safely delete a module when it's no longer needed without causing
+// changes elsewhere in our CSS.CSS objects that can be extended from and into
+// other elements of the site. Think of these as the default relationships
+// that can be used again and again without bloating the codebase.
+//
+
+@import 'modules/hero-carousel';
+@import 'modules/repo-grid';
+
+// ==========================================================================
+// State Rules
+// ==========================================================================
+//
+// Rules that describe how our modules or layouts will look when in a
+// particular state. Is it hidden or expanded? Is it active or inactive?
+// They are about describing how a module or layout looks on screens that are
+// smaller or bigger. They are also about describing how a module might look
+// in different views like the home page or the inside page.
+//
+
+// ==========================================================================
+// Theme Rules
+// ==========================================================================
+//
+// Rules that can base styles like default link colours. They can change
+// module elements such as colours and borders. They can affect layout with
+// different arrangements. They can also alter how states look. Sometimes
+// we'll need CSS code specific to an individual page/section of the
+// website. So we'll do that here so it doesn't interfere with any of our
+// global styles.
+//
+
+@import 'theme/homepage';
+
+// ==========================================================================
+// Vendor
+// ==========================================================================
+//
+// Styles that are from vendor components such as Owl Carousel.
+//
+
+@import 'font-awesome';
+@import '../bower_components/owl-carousel/owl-carousel/owl.carousel.css';
+@import '../bower_components/owl-carousel/owl-carousel/owl.transitions.css';
+@import 'vendor/owl-carousel/owl-theme';

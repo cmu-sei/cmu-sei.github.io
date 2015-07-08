@@ -1,0 +1,148 @@
+// ==========================================================================
+// Base Styles
+// ==========================================================================
+//
+// Base rules are applied directly to elements through element selectors,
+// descendent selectors, child selectors, pseudo-classes, however not specific
+// class or ID selectors.
+//
+// As the name implies these are the base or default styles for elements.
+// CSS resets are an example of base styles.  You should always ask yourself
+// if a ruleset must live in base in order to not lose flexibility down the
+// road.
+//
+
+
+html {
+  font: #{$base-font-size}/#{$line-height-ratio} $base-font-family;
+  min-height: 100%;
+}
+
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  -webkit-font-smoothing: antialiased;
+  line-height: $base-line-height;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hgroup,
+ul,
+ol,
+dl,
+blockquote,
+p,
+address,
+table,
+fieldset,
+figure,
+pre,
+.media,
+.island,
+.islet {
+  margin-bottom: $base-spacing-unit;
+  margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $header-font-color;
+  font-family: $header-font-family;
+  font-weight: $header-font-weight;
+}
+
+h1,
+.alpha {
+  @include font-size($h1-font-size);
+  margin: 0 0 $base-spacing-unit;
+  margin: 0 0 1rem;
+}
+
+h2,
+.beta {
+  @include font-size($h2-font-size);
+}
+
+h3,
+.gamma {
+  @include font-size($h3-font-size);
+}
+
+h4,
+.delta {
+  @include font-size($h4-font-size);
+}
+
+h5,
+.epsilon {
+  @include font-size($h5-font-size);
+}
+
+h6,
+.zeta {
+  @include font-size($h6-font-size);
+}
+
+p {
+  font-family: $paragraph-font-family;
+  font-size: $paragraph-font-size;
+  font-weight: $paragraph-font-weight;
+  line-height: $paragraph-line-height;
+  margin-bottom: $paragraph-margin-bottom;
+  text-rendering: $paragraph-text-rendering;
+ }
+
+a {
+  color: $link-color;
+  text-decoration: $link-text-decoration;
+
+  &:focus,
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: $link-text-decoration-hover;
+  }
+}
+
+form,
+input {
+  width: 100%;
+}
+
+ol {
+  margin: 0 2em 1.5em;
+}
+
+ul {
+  margin: 0 2em 1.5em;
+}
+
+li {
+  margin-bottom: .5em;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid $color-smoke;
+  height: 0;
+}
+
+input {
+  border: 0;
+  padding: .25em .5em;
+}
+
+figcaption {
+  font-size: rem-calc($base-font-size * .85);
+  padding: .25em 0;
+}

@@ -1,0 +1,45 @@
+// ==========================================================================
+// Header Layout
+// ==========================================================================
+//
+// Custom layout for the header.
+//
+
+// Header wrapper
+
+.header {
+  margin: 25px 0 50px;
+}
+
+// Logo Section
+
+.logo {
+
+  // Center the logo on small devices
+
+  @include breakpoint(small) {
+    text-align: center;
+  }
+}
+
+// Specify the maximum size of the logo.
+
+.logo__photo {
+  max-width: 325px;
+}
+
+// SEI Open Source @ GitHub Section
+
+.header__title {
+  font-size: rem-calc(28px);
+  font-weight: bold;
+  position: relative;
+  top: .5em;
+
+  // Add some padding on the top and
+  // center align the text on small devices.
+  @include breakpoint(small) {
+    margin-top: .5em;
+    text-align: center;
+  }
+}
