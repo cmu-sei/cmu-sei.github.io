@@ -144,4 +144,10 @@ var orgs = [
      {"name": "SEI-CERT/scvs",
      "type": "repo",
      "featured": false},
+     {"name": "cmu-sei/eraces",
+     "type": "repo",
+     "featured": false},
+     {"name": "cmu-sei/bgpuma",
+     "type": "repo",
+     "featured": false},
 ];
