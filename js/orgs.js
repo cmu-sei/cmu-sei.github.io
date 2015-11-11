@@ -150,4 +150,10 @@ var orgs = [
      {"name": "cmu-sei/bgpuma",
      "type": "repo",
      "featured": false},
+     {"name": "cmu-sei/quabasebd",
+     "type": "repo",
+     "featured": false},
+     {"name": "cmu-sei/gbtl",
+     "type": "repo",
+     "featured": false},
 ];
