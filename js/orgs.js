@@ -156,4 +156,7 @@ var orgs = [
      {"name": "cmu-sei/gbtl",
      "type": "repo",
      "featured": false},
+     {"name": "jredmondson/gams",
+     "type": "repo",
+     "featured": false}
 ];
