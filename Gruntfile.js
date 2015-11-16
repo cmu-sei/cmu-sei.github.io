@@ -215,7 +215,7 @@ module.exports = function(grunt) {
        // Production target/options that compiles and minifies.
        prod: {
            options: {
-               style: 'compressed',
+               outputStyle: 'compressed',
            },
            files: {
            'css/app.min.css': 'scss/app.scss'
@@ -225,7 +225,7 @@ module.exports = function(grunt) {
        // Development target/options so it compiles, but does not minify.
        dev: {
            options: {
-               style: 'compressed',
+               outputStyle: 'compressed',
                update: true,
                quiet: false
            },
