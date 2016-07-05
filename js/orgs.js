@@ -149,5 +149,8 @@ var orgs = [
      "featured": false},
      {"name": "CERTCC-Vulnerability-Analysis/Vulnerability-Data-Archive-Tools",
      "type": "repo",
+     "featured": false},
+     {"name": "cmu-sei/AASPE",
+     "type": "repo",
      "featured": false}
 ];
