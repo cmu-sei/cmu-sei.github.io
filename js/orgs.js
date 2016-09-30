@@ -152,5 +152,8 @@ var orgs = [
      "featured": false},
      {"name": "cmu-sei/AASPE",
      "type": "repo",
+     "featured": false},
+     {"name": "cmu-sei/eem",
+     "type": "repo",
      "featured": false}
 ];
