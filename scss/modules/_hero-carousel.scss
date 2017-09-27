@@ -43,12 +43,14 @@
 //</section>
 //
 
+// Variables
+$hero-wrapper-bgcolor: rgba(0, 0, 0, .5);
 
 // Vertically and horizontally aligns the overaly block within the carousel
 // that displays the project information.
 
 .hero-item__wrapper {
-  background-color: rgba(0, 0, 0, .50);
+  background-color: $hero-wrapper-bgcolor;
   color: $color-white;
   left: 50%;
   margin: 0 auto;
