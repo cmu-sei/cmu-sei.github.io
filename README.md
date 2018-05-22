@@ -19,7 +19,7 @@ List of SEI Organizations on GitHub
 - https://github.com/quilt
 - https://github.com/cps-sei
 - https://github.com/SEI-AMS
-- https://github.com/CERTCC-Vulnerability-Analysis
+- https://github.com/CERTCC
 - https://github.com/osate
 
 Note. If the SEI Open Source project you are looking for is not in one of these organizations
@@ -31,4 +31,3 @@ then we have several other projects hosted on SourceForge and BitBucket here:
 - https://bitbucket.org/spacer/spacer.bitbucket.org
 - http://sourceforge.net/projects/madara
 - https://www.cs.cmu.edu/~wklieber/didfail/
-
