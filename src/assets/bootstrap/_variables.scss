@@ -1,0 +1,171 @@
+@import '@/assets/colors.scss';
+
+/*
+ * BOOTSTRAP VARIABLE ASSIGNMENTS
+ */
+
+/*
+ * Use Open Sans
+ */
+
+$FontPathOpenSans: "~npm-font-open-sans/fonts";
+@import 'node_modules/npm-font-open-sans/open-sans';
+
+$font-family-base: "Open Sans", sans-serif;
+
+/*
+ * The colors found here are all keyed
+ * off of color selections available from the
+ * color palette found here:
+ * https://wiki-int.sei.cmu.edu/confluence/display/COMM/Color+Palette
+ * Most are from the extended color palette
+ * with the exception of light gray, dark gray, and red which
+ * are from the core color palette
+ */
+$white: $color-white;
+$light-gray: #e0e0e0;
+$dark-gray: #666;
+$black: $color-black;
+
+/*
+ * The gray variations key off of the
+ * core color palette's light and dark gray
+ */
+$gray-100: mix($light-gray, $white, 50%);
+$gray-200: $light-gray;
+$gray-300: mix($light-gray, $dark-gray, 75%);
+$gray-400: mix($light-gray, $dark-gray, 50%);
+$gray-500: mix($light-gray, $dark-gray, 25%);
+$gray-600: $dark-gray;
+$gray-700: mix($dark-gray, $black, 80%);
+$gray-800: mix($dark-gray, $black, 60%);
+$gray-900: mix($dark-gray, $black, 40%);
+
+/*
+ * All colors coorespond to the darker neutral color version
+ * found in the extended color palette
+ * unless otherwise noted:
+ */
+$blue:    $color-sei-blue;
+$indigo:  $color-sei-eggplant;
+$purple:  $color-sei-purple;
+$pink:    $color-sei-eggplant-lightest;
+$red:     #b00; // core color palette - cmu red
+$orange:  $color-sei-orange;
+$yellow:  $color-sei-yellow;
+$green:   $color-sei-green;
+$teal:    $color-sei-teal;
+$cyan:    $color-sei-cyan;
+
+$body-color: $gray-700;
+$body-bg: $white;
+$link-color: $cyan;
+
+$theme-colors: (
+  // CMU Red
+  "cmu-red": $red,
+
+  // SEI Gray
+  "sei-gray-lightest": $color-sei-gray-lightest,
+  "sei-gray-lighter": $color-sei-gray-lighter,
+  "sei-gray-light": $color-sei-gray-light,
+  "sei-gray": $color-sei-gray,
+  "sei-gray-darker": $color-sei-gray-darker,
+  "sei-gray-darkest": $color-sei-gray-darkest,
+
+  // SEI Teal
+  "sei-teal-lightest": $color-sei-teal-lightest,
+  "sei-teal-lighter": $color-sei-teal-lighter,
+  "sei-teal-light": $color-sei-teal-light,
+  "sei-teal": $color-sei-teal,
+  "sei-teal-darker": $color-sei-teal-darker,
+  "sei-teal-darkest": $color-sei-teal-darkest,
+
+  // SEI Green
+  "sei-green-lightest": $color-sei-green-lightest,
+  "sei-green-lighter": $color-sei-green-lighter,
+  "sei-green-light": $color-sei-green-light,
+  "sei-green": $color-sei-green,
+  "sei-green-darker": $color-sei-green-darker,
+  "sei-green-darkest": $color-sei-green-darkest,
+
+  // SEI Spring Green
+  "sei-spring-green-lightest": $color-sei-spring-green-lightest,
+  "sei-spring-green-lighter": $color-sei-spring-green-lighter,
+  "sei-spring-green-light": $color-sei-spring-green-light,
+  "sei-spring-green": $color-sei-spring-green,
+  "sei-spring-green-darker": $color-sei-spring-green-darker,
+  "sei-spring-green-darkest": $color-sei-spring-green-darkest,
+
+  // SEI Yellow
+  "sei-yellow-lightest": $color-sei-yellow-lightest,
+  "sei-yellow-lighter": $color-sei-yellow-lighter,
+  "sei-yellow-light": $color-sei-yellow-light,
+  "sei-yellow": $color-sei-yellow,
+  "sei-yellow-darker": $color-sei-yellow-darker,
+  "sei-yellow-darkest": $color-sei-yellow-darkest,
+
+  // SEI Orange
+  "sei-orange-lightest": $color-sei-orange-lightest,
+  "sei-orange-lighter": $color-sei-orange-lighter,
+  "sei-orange-light": $color-sei-orange-light,
+  "sei-orange": $color-sei-orange,
+  "sei-orange-darker": $color-sei-orange-darker,
+  "sei-orange-darkest": $color-sei-orange-darkest,
+
+  // SEI Tangerine
+  "sei-tangerine-lightest": $color-sei-tangerine-lightest,
+  "sei-tangerine-lighter": $color-sei-tangerine-lighter,
+  "sei-tangerine-light": $color-sei-tangerine-light,
+  "sei-tangerine": $color-sei-tangerine,
+  "sei-tangerine-darker": $color-sei-tangerine-darker,
+  "sei-tangerine-darkest": $color-sei-tangerine-darkest,
+
+  // SEI Red
+  "sei-red-lightest": $color-sei-red-lightest,
+  "sei-red-lighter": $color-sei-red-lighter,
+  "sei-red-light": $color-sei-red-light,
+  "sei-red": $color-sei-red,
+  "sei-red-darker": $color-sei-red-darker,
+  "sei-red-darkest": $color-sei-red-darkest,
+
+  // SEI Eggplant
+  "sei-eggplant-lightest": $color-sei-eggplant-lightest,
+  "sei-eggplant-lighter": $color-sei-eggplant-lighter,
+  "sei-eggplant-light": $color-sei-eggplant-light,
+  "sei-eggplant": $color-sei-eggplant,
+  "sei-eggplant-darker": $color-sei-eggplant-darker,
+  "sei-eggplant-darkest": $color-sei-eggplant-darkest,
+
+  // SEI Purple
+  "sei-purple-lightest": $color-sei-purple-lightest,
+  "sei-purple-lighter": $color-sei-purple-lighter,
+  "sei-purple-light": $color-sei-purple-light,
+  "sei-purple": $color-sei-purple,
+  "sei-purple-darker": $color-sei-purple-darker,
+  "sei-purple-darkest": $color-sei-purple-darkest,
+
+  // SEI Prussian Blue
+  "sei-prussian-lightest": $color-sei-prussian-lightest,
+  "sei-prussian-lighter": $color-sei-prussian-lighter,
+  "sei-prussian-light": $color-sei-prussian-light,
+  "sei-prussian": $color-sei-prussian,
+  "sei-prussian-darker": $color-sei-prussian-darker,
+  "sei-prussian-darkest": $color-sei-prussian-darkest,
+
+  // SEI Blue
+  "sei-blue-lightest": $color-sei-blue-lightest,
+  "sei-blue-lighter": $color-sei-blue-lighter,
+  "sei-blue-light": $color-sei-blue-light,
+  "sei-blue": $color-sei-blue,
+  "sei-blue-darker": $color-sei-blue-darker,
+  "sei-blue-darkest": $color-sei-blue-darkest,
+
+  // SEI Cyan
+  "sei-cyan-lightest": $color-sei-cyan-lightest,
+  "sei-cyan-lighter": $color-sei-cyan-lighter,
+  "sei-cyan-light": $color-sei-cyan-light,
+  "sei-cyan": $color-sei-cyan,
+  "sei-cyan-darker": $color-sei-cyan-darker,
+  "sei-cyan-darkest": $color-sei-cyan-darkest
+);

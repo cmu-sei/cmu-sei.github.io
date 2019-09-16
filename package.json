@@ -1,26 +1,51 @@
 {
-  "name": "foundation-libsass-template",
-  "version": "0.0.1",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zurb/foundation-libsass-template.git"
-  },
-  "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-concat": "^0.5.1",
-    "grunt-contrib-copy": "^0.8.0",
-    "grunt-contrib-jshint": "^0.11.2",
-    "grunt-contrib-uglify": "^0.10.1",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-newer": "^1.1.0",
-    "grunt-sass": "~1.1.0",
-    "grunt-scss-lint": "^0.3.6",
-    "grunt-string-replace": "^1.2.0",
-    "grunt-sync": "^0.4.1",
-    "node-sass": "^3.4.2",
-    "time-grunt": "^1.2.0"
+  "name": "cmu-sei",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "deploy": "./deploy.sh",
+    "lint": "vue-cli-service lint",
+    "test": "npm run test:unit",
+    "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "node-sass": "^3.4.2"
+    "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
+    "bootstrap-vue": "^2.0.1",
+    "core-js": "^2.6.9",
+    "npm-font-open-sans": "^1.1.0",
+    "vue": "^2.6.6",
+    "vue-analytics": "^5.17.2",
+    "vuex": "^3.1.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/cli-plugin-eslint": "^3.11.0",
+    "@vue/cli-plugin-unit-jest": "^3.11.0",
+    "@vue/cli-service": "^3.11.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^23.6.0",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "fibers": "^3.1.1",
+    "lint-staged": "^8.2.1",
+    "sass": "^1.22.12",
+    "sass-loader": "^7.3.1",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint",
+      "git add",
+      "vue-cli-service test:unit"
+    ]
   }
 }
