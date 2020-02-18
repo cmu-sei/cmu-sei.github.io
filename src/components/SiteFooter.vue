@@ -21,7 +21,7 @@
                     </b-link>
                   </li>
                   <li class="list-inline-item">
-                    <b-link href="https://twitter.com/SEInews" class="social twitter" target="_blank">
+                    <b-link href="https://twitter.com/sei_cmu" class="social twitter" target="_blank">
                       <span class="sr-only">Twitter</span>
                     </b-link>
                   </li>
@@ -36,7 +36,7 @@
                     </b-link>
                   </li>
                   <li class="list-inline-item">
-                    <b-link href="https://itunes.apple.com/us/podcast/software-engineering-institute-sei-podcast-series/id566573552?mt=2" class="social itunes" target="_blank">
+                    <b-link href="https://podcasts.apple.com/us/podcast/software-engineering-institute-sei-podcast-series/id566573552?mt=2" class="social itunes" target="_blank">
                       <span class="sr-only">iTunes</span>
                     </b-link>
                   </li>

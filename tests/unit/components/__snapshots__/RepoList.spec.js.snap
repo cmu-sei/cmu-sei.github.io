@@ -13,10 +13,13 @@ exports[`RepoList.vue filters by language: FilterByLanguage 1`] = `
             </h3>
             <b-row-stub tag="div" class="mb-3">
               <b-col-stub md="6" tag="div">
-                <b-form-input-stub value="javascri" autocomplete="off" placeholder="Filter by title or language" type="text"></b-form-input-stub>
+                <b-form-input-stub value="" autocomplete="off" placeholder="Filter by title or language" debounce="0" type="text"></b-form-input-stub>
               </b-col-stub>
             </b-row-stub>
             <b-row-stub tag="div">
+              <b-col-stub lg="8" tag="div" class="mb-4">
+                <repo-card-stub item="[object Object]"></repo-card-stub>
+              </b-col-stub>
               <b-col-stub lg="8" tag="div" class="mb-4">
                 <repo-card-stub item="[object Object]"></repo-card-stub>
               </b-col-stub>
@@ -91,7 +94,7 @@ exports[`RepoList.vue matches snapshot with set props (with filter, with title c
             </h3>
             <b-row-stub tag="div" class="mb-3">
               <b-col-stub md="6" tag="div">
-                <b-form-input-stub value="" autocomplete="off" placeholder="Filter by title or language" type="text"></b-form-input-stub>
+                <b-form-input-stub value="" autocomplete="off" placeholder="Filter by title or language" debounce="0" type="text"></b-form-input-stub>
               </b-col-stub>
             </b-row-stub>
             <b-row-stub tag="div">

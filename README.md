@@ -76,6 +76,12 @@ npm run test:unit
 - Navigate to `src/data/repos.js`.
 - Add repo by following format specified in file.
 
+### Deploy to github pages
+
+```bash
+npm run deploy
+```
+
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).

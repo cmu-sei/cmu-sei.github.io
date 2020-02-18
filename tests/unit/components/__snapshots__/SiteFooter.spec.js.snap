@@ -21,7 +21,7 @@ exports[`SiteFooter.vue matches snapshot 1`] = `
                 <b-link-stub href="https://www.facebook.com/SEICMU/" target="_blank" event="click" routertag="a" class="social facebook"><span class="sr-only">Facebook</span></b-link-stub>
               </li>
               <li class="list-inline-item">
-                <b-link-stub href="https://twitter.com/SEInews" target="_blank" event="click" routertag="a" class="social twitter"><span class="sr-only">Twitter</span></b-link-stub>
+                <b-link-stub href="https://twitter.com/sei_cmu" target="_blank" event="click" routertag="a" class="social twitter"><span class="sr-only">Twitter</span></b-link-stub>
               </li>
               <li class="list-inline-item">
                 <b-link-stub href="https://www.linkedin.com/company/software-engineering-institute" target="_blank" event="click" routertag="a" class="social linkedin"><span class="sr-only">LinkedIn</span></b-link-stub>
@@ -30,7 +30,7 @@ exports[`SiteFooter.vue matches snapshot 1`] = `
                 <b-link-stub href="https://www.youtube.com/user/TheSEICMU" target="_blank" event="click" routertag="a" class="social youtube"><span class="sr-only">YouTube</span></b-link-stub>
               </li>
               <li class="list-inline-item">
-                <b-link-stub href="https://itunes.apple.com/us/podcast/software-engineering-institute-sei-podcast-series/id566573552?mt=2" target="_blank" event="click" routertag="a" class="social itunes"><span class="sr-only">iTunes</span></b-link-stub>
+                <b-link-stub href="https://podcasts.apple.com/us/podcast/software-engineering-institute-sei-podcast-series/id566573552?mt=2" target="_blank" event="click" routertag="a" class="social itunes"><span class="sr-only">iTunes</span></b-link-stub>
               </li>
             </ul>
           </b-col-stub>
@@ -60,7 +60,7 @@ exports[`SiteFooter.vue matches snapshot 1`] = `
           </b-col-stub>
         </b-row-stub>
         <b-row-stub tag="div">
-          <b-col-stub tag="div"><small>©2019 Carnegie Mellon University</small></b-col-stub>
+          <b-col-stub tag="div"><small>©2020 Carnegie Mellon University</small></b-col-stub>
         </b-row-stub>
       </b-container-stub>
     </b-col-stub>
