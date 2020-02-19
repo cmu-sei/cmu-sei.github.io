@@ -145,7 +145,6 @@ a:not(.social):not(.btn-contact) {
   }
   &.itunes {
     background-position: -161px 0;
-    border-radius: 50%;
   }
 }
 </style>
