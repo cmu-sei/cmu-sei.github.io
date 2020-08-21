@@ -2,7 +2,7 @@
 
 exports[`RepoCard.vue matches snapshot with default props: defaultProps 1`] = `
 <div class="border border-sei-gray-lightest bg-white p-3 h-100">
-  <h4><a target="_self" href="#" class="text-cmu-red font-weight-bold"></a> <span class="d-inline-block ml-1 mr-1">/</span> <a target="_self" href="#" class="text-cmu-red"></a></h4>
+  <h4><a href="#" target="_self" class="text-cmu-red font-weight-bold"></a> <span class="d-inline-block ml-1 mr-1">/</span> <a href="#" target="_self" class="text-cmu-red"></a></h4>
   <p class="small"></p>
   <div class="info-section"><span class="d-inline-block mr-3 font-weight-bold"><svg><use xlink:href="#star"></use></svg>
       0
@@ -16,7 +16,7 @@ exports[`RepoCard.vue matches snapshot with default props: defaultProps 1`] = `
 
 exports[`RepoCard.vue matches snapshot with set props: withProps 1`] = `
 <div class="border border-sei-gray-lightest bg-white p-3 h-100">
-  <h4><a target="_self" href="https://github.com/<OWNER>" class="text-cmu-red font-weight-bold">&lt;OWNER&gt;</a> <span class="d-inline-block ml-1 mr-1">/</span> <a target="_self" href="https://github.com/<OWNER>/<NAME>" class="text-cmu-red">&lt;NAME&gt;</a></h4>
+  <h4><a href="https://github.com/<OWNER>" target="_self" class="text-cmu-red font-weight-bold">&lt;OWNER&gt;</a> <span class="d-inline-block ml-1 mr-1">/</span> <a href="https://github.com/<OWNER>/<NAME>" target="_self" class="text-cmu-red">&lt;NAME&gt;</a></h4>
   <p class="small">Nulla quis lorem ut libero malesuada feugiat.</p>
   <div class="info-section"><span class="d-inline-block mr-3 font-weight-bold"><svg><use xlink:href="#star"></use></svg>
       150

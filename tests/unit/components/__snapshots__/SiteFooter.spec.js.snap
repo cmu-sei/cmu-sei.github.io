@@ -35,7 +35,7 @@ exports[`SiteFooter.vue matches snapshot 1`] = `
             </ul>
           </b-col-stub>
           <b-col-stub md="true" tag="div" class="mb-4 mb-md-0">
-            <b-button-stub href="https://sei.cmu.edu/contact-us/" target="_self" event="click" routertag="a" block="true" size="lg" variant="outline-light" type="button" tag="button" class="btn-contact rounded-0 pt-4 pb-4">Contact Us</b-button-stub>
+            <b-button-stub block="true" size="lg" variant="outline-light" type="button" tag="button" href="https://sei.cmu.edu/contact-us/" target="_self" class="btn-contact rounded-0 pt-4 pb-4">Contact Us</b-button-stub>
           </b-col-stub>
         </b-row-stub>
         <b-row-stub tag="div">
@@ -48,7 +48,10 @@ exports[`SiteFooter.vue matches snapshot 1`] = `
                 <b-link-stub href="https://www.sei.cmu.edu/additional-sites-directory/index.cfm" target="_self" event="click" routertag="a">Additional Sites Directory</b-link-stub>
               </li>
               <li class="list-inline-item">
-                <b-link-stub href="https://www.sei.cmu.edu/legal/index.cfm" target="_self" event="click" routertag="a">Legal Info</b-link-stub>
+                <b-link-stub href="https://www.sei.cmu.edu/legal/index.cfm" target="_self" event="click" routertag="a">Legal</b-link-stub>
+              </li>
+              <li class="list-inline-item">
+                <b-link-stub href="https://www.sei.cmu.edu/legal/privacy-notice/index.cfm" target="_self" event="click" routertag="a">Privacy Notice</b-link-stub>
               </li>
               <li class="list-inline-item">
                 <b-link-stub href="https://www.cmu.edu/hr/ethics-hotline/" target="_self" event="click" routertag="a">CMU Ethics Hotline</b-link-stub>

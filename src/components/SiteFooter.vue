@@ -61,7 +61,10 @@
                     <b-link href="https://www.sei.cmu.edu/additional-sites-directory/index.cfm">Additional Sites Directory</b-link>
                   </li>
                   <li class="list-inline-item">
-                    <b-link href="https://www.sei.cmu.edu/legal/index.cfm">Legal Info</b-link>
+                    <b-link href="https://www.sei.cmu.edu/legal/index.cfm">Legal</b-link>
+                  </li>
+                  <li class="list-inline-item">
+                    <b-link href="https://www.sei.cmu.edu/legal/privacy-notice/index.cfm">Privacy Notice</b-link>
                   </li>
                   <li class="list-inline-item">
                     <b-link href="https://www.cmu.edu/hr/ethics-hotline/">CMU Ethics Hotline</b-link>
