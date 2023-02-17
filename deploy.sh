@@ -18,6 +18,6 @@ git add -A
 git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io
-git push -f git@github.com:cmu-sei/cmu-sei.github.io.git master
+git push -f https://sei-jdshimkoski@github.com:cmu-sei/cmu-sei.github.io.git master
 
 cd -
