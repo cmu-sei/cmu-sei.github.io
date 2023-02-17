@@ -3,19 +3,15 @@
 # abort on errors
 set -e
 
-# run lint
-echo Linting...
-npm run lint
-
 # run unit tests
 echo Running Unit Tests...
-npm run test:unit
+npm test
 
 # build
-npm run build
+npm run generate
 
 # navigate into the build output directory
-cd dist
+cd .output/public
 
 git init
 git add -A

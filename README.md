@@ -18,7 +18,7 @@ Before starting work on a new feature, enhancement, or fix, please create an iss
 ### List of SEI Organizations on GitHub
 
 - <https://github.com/cps-sei>
-- <https://github.com/SEI-TTG>
+- <https://github.com/SEI-TAS>
 - <https://github.com/CERTCC>
 - <https://github.com/osate>
 
@@ -43,13 +43,13 @@ npm install
 ### Compiles and hot-reloads for development
 
 ```bash
-npm run serve
+npm run dev
 ```
 
 ### Compiles and minifies for production
 
 ```bash
-npm run build
+npm run generate
 ```
 
 ### Run your tests
@@ -58,24 +58,12 @@ npm run build
 npm test
 ```
 
-### Lints and fixes files
-
-```bash
-npm run lint
-```
-
-### Run your unit tests
-
-```bash
-npm run test:unit
-```
-
 ### Add a repo
 
 - Ensure to follow the contribution instructions found above.
-- Navigate to `src/data/repos.js`.
+- Navigate to `composables/github.ts`.
 - Add repo by following format specified in file.
 
 ### Customize configuration
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.

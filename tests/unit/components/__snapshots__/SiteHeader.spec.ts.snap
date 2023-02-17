@@ -1,0 +1,7 @@
+// Vitest Snapshot v1
+
+exports[`SiteHeader.vue > matches snapshot 1`] = `
+"<header class=\\"bg-red-500\\">
+  <anonymous-stub></anonymous-stub>
+</header>"
+`;
