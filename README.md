@@ -64,6 +64,12 @@ npm test
 - Navigate to `composables/github.ts`.
 - Add repo by following format specified in file.
 
+### Deploy changes to master
+
+```bash
+npm run deploy
+```
+
 ### Customize configuration
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
