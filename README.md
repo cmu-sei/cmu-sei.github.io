@@ -64,7 +64,7 @@ npm test
 - Navigate to `composables/github.ts`.
 - Add repo by following format specified in file.
 
-### Deploy changes to master
+### Deploy to github pages
 
 ```bash
 npm run deploy
