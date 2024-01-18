@@ -147,7 +147,6 @@ const year = computed(() => {
   }
   &.itunes {
     background-position: -161px 0;
-    border-radius: 50%;
   }
 }
 </style>
