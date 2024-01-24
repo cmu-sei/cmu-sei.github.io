@@ -1,54 +1,50 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`App.vue > gets all and recent repos on mounted > homepage 1`] = `
-"<div class=\\"flex flex-col h-screen w-screen\\">
+"<div class="flex flex-col h-screen w-screen">
   <title-stub></title-stub>
-  <body-stub class=\\"bg-white text-gray-900\\"></body-stub>
+  <body-stub class="bg-white text-gray-900"></body-stub>
   <anonymous-stub></anonymous-stub>
-  <anonymous-stub class=\\"shrink-0\\"></anonymous-stub>
-  <main class=\\"grow mb-2\\">
+  <anonymous-stub class="shrink-0"></anonymous-stub>
+  <main class="grow mb-2">
     <anonymous-stub></anonymous-stub>
-    <div class=\\"flex\\">
-      <div class=\\"mx-auto my-8\\">
-        <anonymous-stub></anonymous-stub>
-      </div>
+    <div>
+      <anonymous-stub></anonymous-stub>
     </div>
   </main>
-  <site-footer-stub class=\\"shrink-0\\"></site-footer-stub>
+  <site-footer-stub class="shrink-0"></site-footer-stub>
 </div>"
 `;
 
 exports[`App.vue > matches snapshots > DoneLoading 1`] = `
-"<div class=\\"flex flex-col h-screen w-screen\\">
+"<div class="flex flex-col h-screen w-screen">
   <title-stub></title-stub>
-  <body-stub class=\\"bg-white text-gray-900\\"></body-stub>
+  <body-stub class="bg-white text-gray-900"></body-stub>
   <anonymous-stub></anonymous-stub>
-  <anonymous-stub class=\\"shrink-0\\"></anonymous-stub>
-  <main class=\\"grow mb-2\\">
+  <anonymous-stub class="shrink-0"></anonymous-stub>
+  <main class="grow mb-2">
     <anonymous-stub></anonymous-stub>
-    <div class=\\"flex\\">
-      <div class=\\"mx-auto my-8\\">
-        <anonymous-stub></anonymous-stub>
-      </div>
+    <div>
+      <anonymous-stub></anonymous-stub>
     </div>
   </main>
-  <site-footer-stub class=\\"shrink-0\\"></site-footer-stub>
+  <site-footer-stub class="shrink-0"></site-footer-stub>
 </div>"
 `;
 
 exports[`App.vue > matches snapshots > Loading 1`] = `
-"<div class=\\"flex flex-col h-screen w-screen\\">
+"<div class="flex flex-col h-screen w-screen">
   <title-stub></title-stub>
-  <body-stub class=\\"bg-white text-gray-900\\"></body-stub>
+  <body-stub class="bg-white text-gray-900"></body-stub>
   <anonymous-stub></anonymous-stub>
-  <anonymous-stub class=\\"shrink-0\\"></anonymous-stub>
-  <main class=\\"grow mb-2\\">
+  <anonymous-stub class="shrink-0"></anonymous-stub>
+  <main class="grow mb-2">
     <anonymous-stub></anonymous-stub>
-    <div class=\\"bg-gray-100\\">
+    <div class="bg-gray-100">
       <!--v-if-->
     </div>
     <!--v-if-->
   </main>
-  <site-footer-stub class=\\"shrink-0\\"></site-footer-stub>
+  <site-footer-stub class="shrink-0"></site-footer-stub>
 </div>"
 `;

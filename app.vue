@@ -91,17 +91,21 @@ const getAllRepos = async () => {
   receivedResponse.value = false
   error.value = false
 
-  for await (const i of repos.value) {
-    const { data } = await api(i.name, i.type)
-    if (data.value) {
-      receivedResponse.value = true
-      tmpItems.push(data.value)
-    }
-  }
+  try {
+    for await (const i of repos.value) {
+      const { data } = await api(i.name, i.type)
+      if (data.value) {
+        receivedResponse.value = true
+        tmpItems.push(data.value)
+      }
 
-  if (receivedResponse.value) {
-    items.value = tmpItems
-  } else {
+      if (receivedResponse.value) {
+        items.value = tmpItems
+      } else {
+        error.value = true
+      }
+    }
+  } catch(e) {
     error.value = true
   }
 

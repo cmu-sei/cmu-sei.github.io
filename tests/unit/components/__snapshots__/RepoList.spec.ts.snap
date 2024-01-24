@@ -1,7 +1,7 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`RepoList.vue > matches snapshot with default props > defaultProps 1`] = `"<anonymous-stub class=\\"space-y-6 py-8\\"></anonymous-stub>"`;
+exports[`RepoList.vue > matches snapshot with default props > defaultProps 1`] = `"<anonymous-stub class="space-y-6 py-8"></anonymous-stub>"`;
 
-exports[`RepoList.vue > matches snapshot with set props (no filter, no title count, default title) > noFilterNoTitleCountDefaultTitle 1`] = `"<anonymous-stub class=\\"space-y-6 py-8\\"></anonymous-stub>"`;
+exports[`RepoList.vue > matches snapshot with set props (no filter, no title count, default title) > noFilterNoTitleCountDefaultTitle 1`] = `"<anonymous-stub class="space-y-6 py-8"></anonymous-stub>"`;
 
-exports[`RepoList.vue > matches snapshot with set props (with filter, with title count, 4 columns, set title) > withFilterWithTitleCountFourColumnsWithSetTitle 1`] = `"<anonymous-stub class=\\"space-y-6 py-8\\" colwidth=\\"4\\"></anonymous-stub>"`;
+exports[`RepoList.vue > matches snapshot with set props (with filter, with title count, 4 columns, set title) > withFilterWithTitleCountFourColumnsWithSetTitle 1`] = `"<anonymous-stub class="space-y-6 py-8" colwidth="4"></anonymous-stub>"`;

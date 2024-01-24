@@ -10,13 +10,18 @@
     "test:unit": "vitest run",
     "deploy": "./deploy.sh"
   },
+  "type": "module",
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.10.4",
+    "@nuxt/test-utils": "^3.10.0",
+    "@nuxtjs/tailwindcss": "^6.11.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.10",
+    "@vue/test-utils": "^2.4.3",
+    "happy-dom": "^13.3.1",
     "nuxt": "^3.9.3",
-    "nuxt-vitest": "^0.6.12"
+    "vitest": "^1.2.1",
+    "vitest-environment-nuxt": "^1.0.0"
   }
 }

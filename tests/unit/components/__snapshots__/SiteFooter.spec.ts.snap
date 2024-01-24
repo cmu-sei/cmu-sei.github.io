@@ -1,7 +1,7 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`SiteFooter.vue > matches snapshot 1`] = `
-"<div data-v-2a8bf75c=\\"\\" class=\\"bg-gray-900 text-gray-50 py-8\\">
-  <anonymous-stub data-v-2a8bf75c=\\"\\"></anonymous-stub>
+"<div data-v-2a8bf75c="" class="bg-gray-900 text-gray-50 py-8">
+  <anonymous-stub data-v-2a8bf75c=""></anonymous-stub>
 </div>"
 `;

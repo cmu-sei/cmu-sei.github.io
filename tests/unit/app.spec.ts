@@ -1,5 +1,5 @@
-import { shallowMount } from '@vue/test-utils'
-import { mockNuxtImport } from 'nuxt-vitest/utils'
+import { shallowMount, flushPromises } from '@vue/test-utils'
+import { mockNuxtImport } from '@nuxt/test-utils/runtime'
 import { describe, expect, it, vi } from 'vitest'
 import Component from '../../app.vue'
 
@@ -51,7 +51,7 @@ const mocks = {
 describe('App.vue', () => {
   it('gets all and recent repos on mounted', async () => {
     const wrapper = shallowMount(Component)
-    await wrapper.vm.$nextTick()
+    await flushPromises()
     expect(wrapper.html()).toMatchSnapshot('homepage')
   })
 
@@ -65,7 +65,7 @@ describe('App.vue', () => {
   it('matches snapshots', async () => {
     const wrapper = shallowMount(Component, { mocks })
     expect(wrapper.html()).toMatchSnapshot('Loading')
-    await wrapper.vm.$nextTick()
+    await flushPromises()
     expect(wrapper.html()).toMatchSnapshot('DoneLoading')
   })
 })

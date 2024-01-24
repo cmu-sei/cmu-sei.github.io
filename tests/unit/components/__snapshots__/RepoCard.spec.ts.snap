@@ -1,39 +1,39 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`RepoCard.vue > matches snapshot with default props > defaultProps 1`] = `
-"<div class=\\"border bg-white p-4 h-48 flex flex-col\\">
-  <h4 class=\\"flex gap-2\\">
-    <nuxt-link-stub class=\\"link link-danger font-bold\\"></nuxt-link-stub><span>/</span>
-    <nuxt-link-stub class=\\"link link-danger\\"></nuxt-link-stub>
+"<div class="border bg-white p-4 h-48 flex flex-col">
+  <h4 class="flex gap-2">
+    <nuxt-link-stub class="link link-danger font-bold"></nuxt-link-stub><span>/</span>
+    <nuxt-link-stub class="link link-danger"></nuxt-link-stub>
   </h4>
-  <p class=\\"text-sm grow\\"></p>
-  <div class=\\"flex gap-4 font-bold text-sm\\">
-    <div class=\\"flex gap-1\\"><svg class=\\"w-4 h-4 mt-0.5\\">
-        <use xlink:href=\\"#star\\"></use>
+  <p class="text-sm grow"></p>
+  <div class="flex gap-4 font-bold text-sm">
+    <div class="flex gap-1"><svg class="w-4 h-4 mt-0.5">
+        <use xlink:href="#star"></use>
       </svg><span>0</span></div>
-    <div class=\\"flex gap-1\\"><svg class=\\"w-4 h-4 mt-0.5\\">
-        <use xlink:href=\\"#fork\\"></use>
+    <div class="flex gap-1"><svg class="w-4 h-4 mt-0.5">
+        <use xlink:href="#fork"></use>
       </svg><span>0</span></div>
-    <div class=\\"flex gap-1\\"><i style=\\"background-color: #fff !important;\\" class=\\"block w-4 h-4 rounded-full bg-black mt-0.5\\" aria-hidden=\\"true\\"></i><span></span></div>
+    <div class="flex gap-1"><i style="background-color: #fff !important;" class="block w-4 h-4 rounded-full bg-black mt-0.5" aria-hidden="true"></i><span></span></div>
   </div>
 </div>"
 `;
 
 exports[`RepoCard.vue > matches snapshot with set props > withProps 1`] = `
-"<div class=\\"border bg-white p-4 h-48 flex flex-col\\">
-  <h4 class=\\"flex gap-2\\">
-    <nuxt-link-stub href=\\"https://github.com/&lt;OWNER&gt;\\" class=\\"link link-danger font-bold\\"></nuxt-link-stub><span>/</span>
-    <nuxt-link-stub href=\\"https://github.com/&lt;OWNER&gt;/&lt;NAME&gt;\\" class=\\"link link-danger\\"></nuxt-link-stub>
+"<div class="border bg-white p-4 h-48 flex flex-col">
+  <h4 class="flex gap-2">
+    <nuxt-link-stub href="https://github.com/<OWNER>" class="link link-danger font-bold"></nuxt-link-stub><span>/</span>
+    <nuxt-link-stub href="https://github.com/<OWNER>/<NAME>" class="link link-danger"></nuxt-link-stub>
   </h4>
-  <p class=\\"text-sm grow\\">Nulla quis lorem ut libero malesuada feugiat.</p>
-  <div class=\\"flex gap-4 font-bold text-sm\\">
-    <div class=\\"flex gap-1\\"><svg class=\\"w-4 h-4 mt-0.5\\">
-        <use xlink:href=\\"#star\\"></use>
+  <p class="text-sm grow">Nulla quis lorem ut libero malesuada feugiat.</p>
+  <div class="flex gap-4 font-bold text-sm">
+    <div class="flex gap-1"><svg class="w-4 h-4 mt-0.5">
+        <use xlink:href="#star"></use>
       </svg><span>150</span></div>
-    <div class=\\"flex gap-1\\"><svg class=\\"w-4 h-4 mt-0.5\\">
-        <use xlink:href=\\"#fork\\"></use>
+    <div class="flex gap-1"><svg class="w-4 h-4 mt-0.5">
+        <use xlink:href="#fork"></use>
       </svg><span>25</span></div>
-    <div class=\\"flex gap-1\\"><i style=\\"background-color: #3572A5 !important;\\" class=\\"block w-4 h-4 rounded-full bg-black mt-0.5\\" aria-hidden=\\"true\\"></i><span>Python</span></div>
+    <div class="flex gap-1"><i style="background-color: #3572A5 !important;" class="block w-4 h-4 rounded-full bg-black mt-0.5" aria-hidden="true"></i><span>Python</span></div>
   </div>
 </div>"
 `;
