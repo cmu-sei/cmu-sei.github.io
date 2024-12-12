@@ -7,7 +7,7 @@ module.exports = plugin(function ({ addComponents, theme }) {
      */
 
     ".btn": {
-      "@apply border inline-block py-2 px-4 rounded select-none whitespace-nowrap font-semibold": {},
+      "@apply border-2 inline-block py-2 px-4 rounded select-none whitespace-nowrap font-semibold": {},
       "--btn-variant": theme("colors.gray.500"),
       "--btn-variant-on": theme("colors.white"),
       borderColor: "var(--btn-variant)",
@@ -56,7 +56,7 @@ module.exports = plugin(function ({ addComponents, theme }) {
     },
 
     ".btn-white": {
-      "--btn-variant": theme("colors.white"),
+      "--btn-variant": theme("colors.transparent"),
       "--btn-variant-on": theme("colors.gray.900"),
     },
 

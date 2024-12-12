@@ -12,16 +12,18 @@
   },
   "type": "module",
   "devDependencies": {
-    "@nuxt/test-utils": "^3.10.0",
-    "@nuxtjs/tailwindcss": "^6.11.0",
+    "@nuxt/test-utils": "^3.15.1",
+    "@nuxtjs/tailwindcss": "^6.12.2",
+    "@sds/components-vue3": "^3.9.1-beta.5",
+    "@sds/tailwindcss-3": "^3.0.10-beta.8",
     "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/forms": "^0.5.9",
     "@tailwindcss/line-clamp": "^0.4.4",
-    "@tailwindcss/typography": "^0.5.10",
-    "@vue/test-utils": "^2.4.3",
-    "happy-dom": "^13.3.1",
-    "nuxt": "^3.9.3",
-    "vitest": "^1.2.1",
-    "vitest-environment-nuxt": "^1.0.0"
+    "@tailwindcss/typography": "^0.5.15",
+    "autoprefixer": "^10.4.20",
+    "nuxt": "^3.14.1592",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "vitest": "^2.1.8"
   }
 }

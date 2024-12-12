@@ -1,6 +1,13 @@
-const colors = require("./tailwindcss/config/tailwindcss-colors");
+import sdsBaseConfig from '@sds/tailwindcss-3'
+import colors from '@sds/tailwindcss-3/tailwindcss/config/tailwindcss-colors.js'
 
 module.exports = {
+  presets: [sdsBaseConfig],
+  content: [
+    './app.vue',
+    './components/*.vue',
+    './node_modules/@sds/components-vue3/src/components/**/*.{vue,js,ts}'
+  ],
   // use tailwind's official dark mode
   darkMode: "class",
   // important set to true so the
@@ -10,7 +17,6 @@ module.exports = {
   important: true,
   theme: {
     // sei design theme settings
-    colors,
     extend: {
       fontFamily: require("./tailwindcss/config/tailwindcss-font-family"),
       typography: require("./tailwindcss/config/tailwindcss-typography"),
@@ -23,13 +29,12 @@ module.exports = {
         warning: colors.orange[500],
         danger: colors.red[500],
         light: colors.gray[100],
-        dark: colors.gray[900],
-      },
-    },
+        dark: colors.gray[900]
+      }
+    }
   },
   plugins: [
     require("./tailwindcss/plugins/btn"),
-    require("./tailwindcss/plugins/form-control"),
     require("./tailwindcss/plugins/input-group"),
     require("./tailwindcss/plugins/link"),
     require("@tailwindcss/typography"),

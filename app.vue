@@ -1,52 +1,88 @@
 <template>
-  <div class="flex flex-col h-screen w-screen">
-    <Title>SEI Open Source @ GitHub</Title>
-    <Body class="bg-white text-gray-900" />
-    <SvgDefs />
-    <SiteHeader class="shrink-0" />
-    <main class="grow mb-2">
-      <Masthead />
-      <div v-if="loading" class="flex">
-        <div class="mx-auto my-8">
-          <Spinner />
+  <SdsLayoutSeiExternal
+    :remove-content-padding="true"
+    :show-footer="true"
+  >
+    <template #default>
+      <div class="flex flex-col">
+        <Title>SEI Open Source @ GitHub</Title>
+        <Body class="bg-white text-gray-900" />
+        <SvgDefs />
+        <main class="grow mb-2">
+          <Masthead />
+          <div v-if="loading" class="flex">
+            <div class="mx-auto my-8">
+              <Spinner />
+            </div>
+          </div>
+          <template v-else>
+            <div v-if="error">
+              <Container>
+                <div class="border border-danger p-8 bg-red-50 text-red-900 rounded my-8">
+                  Oh no! We are unable to load the repo list. Please
+                  <button
+                    class="link link-danger"
+                    @click="getAllRepos"
+                  >try again</button>
+                  later.
+                </div>
+              </Container>
+            </div>
+            <template v-else>
+              <div class="bg-gray-100">
+                <RepoList
+                  v-if="recent.length > 0"
+                  :items="recent"
+                  title="Recent Repos"
+                />
+              </div>
+              <RepoList
+                v-if="all.length > 0"
+                :items="all"
+                show-title-count
+                filter
+                sort
+              />
+            </template>
+          </template>
+        </main>
+      </div>
+    </template>
+    <template #footer>
+      <div class="py-8 text-white bg-gray-400">
+        <div class="container px-4 mx-auto max-w-screen-xl space-y-6 lg:px-8">
+          <ul class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+            <li>
+              <a
+                href="https://vulcoord.cert.org/VulReport/"
+                class="hover:underline focus:underline focus:outline-none"
+              >Report a Vulnerability to CERT/CC</a>
+            </li>
+            <li>
+              <a
+                href="https://sei.cmu.edu/subscribe-to-sei-bulletin/"
+                class="hover:underline focus:underline focus:outline-none"
+              >Subscribe to SEI Bulletin</a>
+            </li>
+            <li>
+              <a
+                href="https://sei.cmu.edu/legal/request-permission-to-use-sei-material"
+                class="hover:underline focus:underline focus:outline-none"
+              >Request Permission to Use SEI Materials</a>
+            </li>
+          </ul>
         </div>
       </div>
-      <template v-else>
-        <div v-if="error">
-          <Container>
-            <div class="border border-danger p-8 bg-red-100 text-red-900 rounded my-8">
-              Oh no! We are unable to load the repo list. Please
-              <button
-                class="link link-danger"
-                @click="getAllRepos"
-              >try again</button>
-              later.
-            </div>
-          </Container>
-        </div>
-        <template v-else>
-          <div class="bg-gray-100">
-            <RepoList
-              v-if="recent.length > 0"
-              :items="recent"
-              title="Recent Repos"
-            />
-          </div>
-          <RepoList
-            v-if="all.length > 0"
-            :items="all"
-            show-title-count
-            filter
-            sort
-          />
-        </template>
-      </template>
-    </main>
-    <SiteFooter class="shrink-0" />
-  </div>
+    </template>
+  </SdsLayoutSeiExternal>
 </template>
 
 <script setup lang="ts">
+// CSS for every SDS component
+import '@sds/components-vue3/dist/style.css';
+// Individually imported SDS components/patterns
+import { SdsLayoutSeiExternal } from '@sds/components-vue3';
+
 const items = ref<ResponseItem[]>([])
 
 const loading = ref(false)
