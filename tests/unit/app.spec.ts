@@ -42,12 +42,6 @@ mockNuxtImport('useGithub', () => {
   }
 })
 
-const mocks = {
-  $ga: {
-    page: vi.fn()
-  }
-}
-
 describe('App.vue', () => {
   it('gets all and recent repos on mounted', async () => {
     const wrapper = shallowMount(Component)
@@ -63,7 +57,7 @@ describe('App.vue', () => {
   // })
 
   it('matches snapshots', async () => {
-    const wrapper = shallowMount(Component, { mocks })
+    const wrapper = shallowMount(Component)
     expect(wrapper.html()).toMatchSnapshot('Loading')
     await flushPromises()
     expect(wrapper.html()).toMatchSnapshot('DoneLoading')

@@ -22,7 +22,7 @@ interface ResponseItem {
   forks: number
   lastModified: date
   language: string
-  updated_at?: any
+  updated_at?: string
   owner: {
     login: string
     html_url: string

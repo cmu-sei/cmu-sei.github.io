@@ -3,9 +3,10 @@
 # abort on errors
 set -e
 
-# run unit tests
-echo Running Unit Tests...
+# run checks
+echo Running unit tests...
 npm test
+npm run lint
 
 # build
 npm run generate

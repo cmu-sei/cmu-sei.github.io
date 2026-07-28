@@ -1,16 +1,14 @@
 export const useGithub = () => {
   return {
-    api: (name: string, type: string) => {
+    api: async (name: string, type: string) => {
       const cmd = type === 'repo' ? '' : '/repos'
-      return useFetch<ResponseItem>(`https://api.github.com/${type}s/${name}${cmd}`, {
+      const data = await $fetch<ResponseItem>(`https://api.github.com/${type}s/${name}${cmd}`, {
         method: 'get',
         query: {
-          per_page: 1000,
-          client_id: 'c4fce46f353ffdd7e307',
-          client_secret: '2c8f578c3ee982b341d17d5076d26ac95252cd87',
-          cache_bust: Math.random()
+          per_page: 1000
         }
       })
+      return { data: ref(data) }
     },
     colors: useState('colors', () => ({
       '1C Enterprise': {

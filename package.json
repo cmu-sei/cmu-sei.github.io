@@ -4,6 +4,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "lint": "eslint --ext .ts,.vue .",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "test": "npm run test:unit",
@@ -12,18 +13,16 @@
   },
   "type": "module",
   "devDependencies": {
-    "@nuxt/test-utils": "^3.15.1",
-    "@nuxtjs/tailwindcss": "^6.12.2",
-    "@sds/components-vue3": "^3.9.1-beta.5",
-    "@sds/tailwindcss-3": "^3.0.10-beta.8",
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/forms": "^0.5.9",
-    "@tailwindcss/line-clamp": "^0.4.4",
-    "@tailwindcss/typography": "^0.5.15",
-    "autoprefixer": "^10.4.20",
-    "nuxt": "^3.14.1592",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.16",
-    "vitest": "^2.1.8"
+    "@cmu-sei/sei-design-system": "^4.12.0",
+    "@nuxt/eslint": "^1.16.0",
+    "@nuxt/test-utils": "^4.1.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@vue/test-utils": "^2.4.6",
+    "happy-dom": "^20.8.1",
+    "nuxt": "^4.5.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10",
+    "vue-tsc": "^3.3.5"
   }
 }

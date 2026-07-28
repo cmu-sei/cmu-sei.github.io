@@ -1,4 +1,6 @@
 *.log*
+.DS_Store
+.data
 .nuxt
 .nitro
 .cache

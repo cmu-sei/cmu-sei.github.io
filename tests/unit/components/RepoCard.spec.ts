@@ -18,6 +18,7 @@ describe('RepoCard.vue', () => {
         description: 'Nulla quis lorem ut libero malesuada feugiat.',
         stars: 150,
         forks: 25,
+        lastModified: '2026-07-28',
         language: {
           title: 'Python',
           color: '#3572A5'

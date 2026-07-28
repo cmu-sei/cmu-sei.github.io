@@ -1,50 +1,50 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`App.vue > gets all and recent repos on mounted > homepage 1`] = `
-"<div class="flex flex-col h-screen w-screen">
-  <title-stub></title-stub>
-  <body-stub class="bg-white text-gray-900"></body-stub>
-  <anonymous-stub></anonymous-stub>
-  <anonymous-stub class="shrink-0"></anonymous-stub>
-  <main class="grow mb-2">
-    <anonymous-stub></anonymous-stub>
-    <div>
-      <anonymous-stub></anonymous-stub>
-    </div>
-  </main>
-  <site-footer-stub class="shrink-0"></site-footer-stub>
-</div>"
+"<sdsbrochuresite remove-content-padding="true" show-footer="true">
+  <div class="flex flex-col sds-theme-plaid">
+    <title-stub></title-stub>
+    <body-stub class="bg-white text-gray-900"></body-stub>
+    <svg-defs-stub></svg-defs-stub>
+    <main class="grow mb-2">
+      <masthead-stub></masthead-stub>
+      <div>
+        <container-stub></container-stub>
+      </div>
+    </main>
+  </div>
+</sdsbrochuresite>"
 `;
 
 exports[`App.vue > matches snapshots > DoneLoading 1`] = `
-"<div class="flex flex-col h-screen w-screen">
-  <title-stub></title-stub>
-  <body-stub class="bg-white text-gray-900"></body-stub>
-  <anonymous-stub></anonymous-stub>
-  <anonymous-stub class="shrink-0"></anonymous-stub>
-  <main class="grow mb-2">
-    <anonymous-stub></anonymous-stub>
-    <div>
-      <anonymous-stub></anonymous-stub>
-    </div>
-  </main>
-  <site-footer-stub class="shrink-0"></site-footer-stub>
-</div>"
+"<sdsbrochuresite remove-content-padding="true" show-footer="true">
+  <div class="flex flex-col sds-theme-plaid">
+    <title-stub></title-stub>
+    <body-stub class="bg-white text-gray-900"></body-stub>
+    <svg-defs-stub></svg-defs-stub>
+    <main class="grow mb-2">
+      <masthead-stub></masthead-stub>
+      <div>
+        <container-stub></container-stub>
+      </div>
+    </main>
+  </div>
+</sdsbrochuresite>"
 `;
 
 exports[`App.vue > matches snapshots > Loading 1`] = `
-"<div class="flex flex-col h-screen w-screen">
-  <title-stub></title-stub>
-  <body-stub class="bg-white text-gray-900"></body-stub>
-  <anonymous-stub></anonymous-stub>
-  <anonymous-stub class="shrink-0"></anonymous-stub>
-  <main class="grow mb-2">
-    <anonymous-stub></anonymous-stub>
-    <div class="bg-gray-100">
+"<sdsbrochuresite remove-content-padding="true" show-footer="true">
+  <div class="flex flex-col sds-theme-plaid">
+    <title-stub></title-stub>
+    <body-stub class="bg-white text-gray-900"></body-stub>
+    <svg-defs-stub></svg-defs-stub>
+    <main class="grow mb-2">
+      <masthead-stub></masthead-stub>
+      <div class="bg-gray-100">
+        <!--v-if-->
+      </div>
       <!--v-if-->
-    </div>
-    <!--v-if-->
-  </main>
-  <site-footer-stub class="shrink-0"></site-footer-stub>
-</div>"
+    </main>
+  </div>
+</sdsbrochuresite>"
 `;

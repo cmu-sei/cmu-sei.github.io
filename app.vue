@@ -1,5 +1,5 @@
 <template>
-  <SdsLayoutSeiExternal
+  <SdsBrochureSite
     :remove-content-padding="true"
     :show-footer="true"
   >
@@ -41,6 +41,7 @@
                 :items="all"
                 show-title-count
                 filter
+                paginate
                 sort
               />
             </template>
@@ -48,41 +49,10 @@
         </main>
       </div>
     </template>
-    <template #footer>
-      <div class="py-8 text-white bg-gray-400">
-        <div class="container px-4 mx-auto max-w-screen-xl space-y-6 lg:px-8">
-          <ul class="grid grid-cols-1 gap-6 lg:grid-cols-3">
-            <li>
-              <a
-                href="https://vulcoord.cert.org/VulReport/"
-                class="hover:underline focus:underline focus:outline-none"
-              >Report a Vulnerability to CERT/CC</a>
-            </li>
-            <li>
-              <a
-                href="https://sei.cmu.edu/subscribe-to-sei-bulletin/"
-                class="hover:underline focus:underline focus:outline-none"
-              >Subscribe to SEI Bulletin</a>
-            </li>
-            <li>
-              <a
-                href="https://sei.cmu.edu/legal/request-permission-to-use-sei-material"
-                class="hover:underline focus:underline focus:outline-none"
-              >Request Permission to Use SEI Materials</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </template>
-  </SdsLayoutSeiExternal>
+  </SdsBrochureSite>
 </template>
 
 <script setup lang="ts">
-// CSS for every SDS component
-import '@sds/components-vue3/dist/style.css';
-// Individually imported SDS components/patterns
-import { SdsLayoutSeiExternal } from '@sds/components-vue3';
-
 const items = ref<ResponseItem[]>([])
 
 const loading = ref(false)
@@ -141,7 +111,7 @@ const getAllRepos = async () => {
         error.value = true
       }
     }
-  } catch(e) {
+  } catch {
     error.value = true
   }
 
@@ -160,9 +130,7 @@ const setRepoData = (data: ResponseItem) => {
     forks: data.forks_count,
     language: {
       title: data.language,
-      color: typeof (colors.value as unknown as GithubColors)[data.language] !== 'undefined' ?
-        (colors.value as unknown as GithubColors)[data.language].color :
-        '#fff'
+      color: (colors.value as unknown as GithubColors)[data.language]?.color ?? '#fff'
     }
   }
 }
