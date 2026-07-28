@@ -1,50 +1,74 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`App.vue > gets all and recent repos on mounted > homepage 1`] = `
-"<sdsbrochuresite remove-content-padding="true" show-footer="true">
-  <div class="flex flex-col">
-    <title-stub></title-stub>
-    <body-stub class="bg-white text-gray-900"></body-stub>
-    <svg-defs-stub></svg-defs-stub>
-    <main class="grow mb-2">
-      <masthead-stub></masthead-stub>
-      <div>
-        <container-stub></container-stub>
+"<div data-id="sds-brochure-site" class="sds-theme-plaid flex flex-col justify-between w-full min-h-screen text-gray-900 bg-white dark:bg-gray-900 dark:text-gray-100">
+  <main>
+    <sdsbrochuresiteheader></sdsbrochuresiteheader>
+    <section>
+      <div class="flex flex-col">
+        <title-stub></title-stub>
+        <body-stub class="bg-white text-gray-900"></body-stub>
+        <svg-defs-stub></svg-defs-stub>
+        <main class="grow mb-2">
+          <masthead-stub></masthead-stub>
+          <div>
+            <container-stub></container-stub>
+          </div>
+        </main>
       </div>
-    </main>
-  </div>
-</sdsbrochuresite>"
+    </section>
+  </main>
+  <footer>
+    <sdsbrochuresitefooter></sdsbrochuresitefooter>
+  </footer>
+</div>"
 `;
 
 exports[`App.vue > matches snapshots > DoneLoading 1`] = `
-"<sdsbrochuresite remove-content-padding="true" show-footer="true">
-  <div class="flex flex-col">
-    <title-stub></title-stub>
-    <body-stub class="bg-white text-gray-900"></body-stub>
-    <svg-defs-stub></svg-defs-stub>
-    <main class="grow mb-2">
-      <masthead-stub></masthead-stub>
-      <div>
-        <container-stub></container-stub>
+"<div data-id="sds-brochure-site" class="sds-theme-plaid flex flex-col justify-between w-full min-h-screen text-gray-900 bg-white dark:bg-gray-900 dark:text-gray-100">
+  <main>
+    <sdsbrochuresiteheader></sdsbrochuresiteheader>
+    <section>
+      <div class="flex flex-col">
+        <title-stub></title-stub>
+        <body-stub class="bg-white text-gray-900"></body-stub>
+        <svg-defs-stub></svg-defs-stub>
+        <main class="grow mb-2">
+          <masthead-stub></masthead-stub>
+          <div>
+            <container-stub></container-stub>
+          </div>
+        </main>
       </div>
-    </main>
-  </div>
-</sdsbrochuresite>"
+    </section>
+  </main>
+  <footer>
+    <sdsbrochuresitefooter></sdsbrochuresitefooter>
+  </footer>
+</div>"
 `;
 
 exports[`App.vue > matches snapshots > Loading 1`] = `
-"<sdsbrochuresite remove-content-padding="true" show-footer="true">
-  <div class="flex flex-col">
-    <title-stub></title-stub>
-    <body-stub class="bg-white text-gray-900"></body-stub>
-    <svg-defs-stub></svg-defs-stub>
-    <main class="grow mb-2">
-      <masthead-stub></masthead-stub>
-      <div class="bg-gray-100">
-        <!--v-if-->
+"<div data-id="sds-brochure-site" class="sds-theme-plaid flex flex-col justify-between w-full min-h-screen text-gray-900 bg-white dark:bg-gray-900 dark:text-gray-100">
+  <main>
+    <sdsbrochuresiteheader></sdsbrochuresiteheader>
+    <section>
+      <div class="flex flex-col">
+        <title-stub></title-stub>
+        <body-stub class="bg-white text-gray-900"></body-stub>
+        <svg-defs-stub></svg-defs-stub>
+        <main class="grow mb-2">
+          <masthead-stub></masthead-stub>
+          <div class="bg-gray-100">
+            <!--v-if-->
+          </div>
+          <!--v-if-->
+        </main>
       </div>
-      <!--v-if-->
-    </main>
-  </div>
-</sdsbrochuresite>"
+    </section>
+  </main>
+  <footer>
+    <sdsbrochuresitefooter></sdsbrochuresitefooter>
+  </footer>
+</div>"
 `;

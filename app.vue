@@ -1,55 +1,73 @@
 <template>
-  <SdsBrochureSite
-    :remove-content-padding="true"
-    :show-footer="true"
+  <div
+    data-id="sds-brochure-site"
+    class="sds-theme-plaid flex flex-col justify-between w-full min-h-screen text-gray-900 bg-white dark:bg-gray-900 dark:text-gray-100"
   >
-    <template #default>
-      <div class="flex flex-col">
-        <Title>SEI Open Source @ GitHub</Title>
-        <Body class="bg-white text-gray-900" />
-        <SvgDefs />
-        <main class="grow mb-2">
-          <Masthead />
-          <div v-if="loading" class="flex">
-            <div class="mx-auto my-8">
-              <Spinner />
-            </div>
-          </div>
-          <template v-else>
-            <div v-if="error">
-              <Container>
-                <div class="border border-danger p-8 bg-red-50 text-red-900 rounded my-8">
-                  Oh no! We are unable to load the repo list. Please
-                  <button
-                    class="link link-danger"
-                    @click="getAllRepos"
-                  >try again</button>
-                  later.
-                </div>
-              </Container>
+    <main>
+      <SdsBrochureSiteHeader />
+      <section>
+        <div class="flex flex-col">
+          <Title>SEI Open Source @ GitHub</Title>
+          <Body class="bg-white text-gray-900" />
+          <SvgDefs />
+          <main class="grow mb-2">
+            <Masthead />
+            <div v-if="loading" class="flex">
+              <div class="mx-auto my-8">
+                <Spinner />
+              </div>
             </div>
             <template v-else>
-              <div class="bg-gray-100">
-                <RepoList
-                  v-if="recent.length > 0"
-                  :items="recent"
-                  title="Recent Repos"
-                />
+              <div v-if="error">
+                <Container>
+                  <div class="border border-danger p-8 bg-red-50 text-red-900 rounded my-8">
+                    Oh no! We are unable to load the repo list. Please
+                    <button
+                      class="link link-danger"
+                      @click="getAllRepos"
+                    >try again</button>
+                    later.
+                  </div>
+                </Container>
               </div>
-              <RepoList
-                v-if="all.length > 0"
-                :items="all"
-                show-title-count
-                filter
-                paginate
-                sort
-              />
+              <template v-else>
+                <div class="bg-gray-100">
+                  <RepoList
+                    v-if="recent.length > 0"
+                    :items="recent"
+                    title="Recent Repos"
+                  />
+                </div>
+                <RepoList
+                  v-if="all.length > 0"
+                  :items="all"
+                  show-title-count
+                  filter
+                  paginate
+                  sort
+                />
+              </template>
             </template>
-          </template>
-        </main>
-      </div>
-    </template>
-  </SdsBrochureSite>
+          </main>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <SdsBrochureSiteFooter>
+        <template #footer-logo>
+          <a
+            href="https://sei.cmu.edu/"
+            class="block h-fit max-w-96 mr-8"
+          >
+            <img
+              src="/images/sei-logo.svg"
+              alt="SEI Logo"
+            >
+          </a>
+        </template>
+      </SdsBrochureSiteFooter>
+    </footer>
+  </div>
 </template>
 
 <script setup lang="ts">
