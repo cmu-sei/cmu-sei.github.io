@@ -2,7 +2,7 @@
 
 exports[`App.vue > gets all and recent repos on mounted > homepage 1`] = `
 "<sdsbrochuresite remove-content-padding="true" show-footer="true">
-  <div class="flex flex-col sds-theme-plaid">
+  <div class="flex flex-col">
     <title-stub></title-stub>
     <body-stub class="bg-white text-gray-900"></body-stub>
     <svg-defs-stub></svg-defs-stub>
@@ -18,7 +18,7 @@ exports[`App.vue > gets all and recent repos on mounted > homepage 1`] = `
 
 exports[`App.vue > matches snapshots > DoneLoading 1`] = `
 "<sdsbrochuresite remove-content-padding="true" show-footer="true">
-  <div class="flex flex-col sds-theme-plaid">
+  <div class="flex flex-col">
     <title-stub></title-stub>
     <body-stub class="bg-white text-gray-900"></body-stub>
     <svg-defs-stub></svg-defs-stub>
@@ -34,7 +34,7 @@ exports[`App.vue > matches snapshots > DoneLoading 1`] = `
 
 exports[`App.vue > matches snapshots > Loading 1`] = `
 "<sdsbrochuresite remove-content-padding="true" show-footer="true">
-  <div class="flex flex-col sds-theme-plaid">
+  <div class="flex flex-col">
     <title-stub></title-stub>
     <body-stub class="bg-white text-gray-900"></body-stub>
     <svg-defs-stub></svg-defs-stub>
