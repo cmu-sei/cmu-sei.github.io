@@ -8,27 +8,27 @@ mockNuxtImport('useGithub', () => {
     return {
       api: vi.fn((name, type) => {
         return {
-          data: {
-            owner: {
-              login: name.split('/')[0],
-              html_url: 'https://<OWNER_URL>'
-            },
-            name: name.split('/')[1],
-            html_url: 'https://<URL>',
-            description: `Type: ${type}`,
-            stargazers_count: 20,
-            forks_count: 54,
-            language: 'Java'
-          }
+          data: { value: {
+              owner: {
+                login: name.split('/')[0],
+                html_url: 'https://<OWNER_URL>'
+              },
+              name: name.split('/')[1],
+              html_url: 'https://<URL>',
+              description: `Type: ${type}`,
+              stargazers_count: 20,
+              forks_count: 54,
+              language: 'Java'
+            } }
         }
       }),
-      colors: {
+      colors: { value: {
         'Java': {
           'color': '#814CCC',
           'url': '<MOCK_URL>'
         }
-      },
-      repos: [
+      } },
+      repos: { value: [
         {
           name: 'test/hello',
           type: 'repo'
@@ -36,8 +36,12 @@ mockNuxtImport('useGithub', () => {
         {
           name: 'test2/world',
           type: 'repo'
+        },
+        {
+          name: 'TEST/HELLO',
+          type: 'repo'
         }
-      ]
+      ] }
     }
   }
 })
@@ -46,6 +50,7 @@ describe('App.vue', () => {
   it('gets all and recent repos on mounted', async () => {
     const wrapper = shallowMount(Component)
     await flushPromises()
+    expect((wrapper.vm as unknown as { all: RepoItem[] }).all).toHaveLength(2)
     expect(wrapper.html()).toMatchSnapshot('homepage')
   })
 

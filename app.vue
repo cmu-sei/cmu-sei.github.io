@@ -71,7 +71,7 @@
 </template>
 
 <script setup lang="ts">
-const items = ref<ResponseItem[]>([])
+const items = ref<Array<ResponseItem | ResponseItem[]>>([])
 
 const loading = ref(false)
 const receivedResponse = ref(false)
@@ -88,17 +88,26 @@ onMounted(() => {
 
 const all = computed<RepoItem[]>(() => {
   const tmpAll: RepoItem[] = []
+  const seen = new Set<string>()
   items.value.forEach((item) => {
     // if repo type is org, it returns an array of objects
     if (Array.isArray(item)) {
       item.forEach(i => {
         const tmp: RepoItem = setRepoData(i)
-        tmpAll.push(tmp)
+        const key = `${tmp.owner}/${tmp.name}`.toLowerCase()
+        if (!seen.has(key)) {
+          seen.add(key)
+          tmpAll.push(tmp)
+        }
       })
     // otherwise, it is an object
     } else {
       const tmp = setRepoData(item)
-      tmpAll.push(tmp)
+      const key = `${tmp.owner}/${tmp.name}`.toLowerCase()
+      if (!seen.has(key)) {
+        seen.add(key)
+        tmpAll.push(tmp)
+      }
     }
   })
   return tmpAll
@@ -110,7 +119,7 @@ const recent = computed<RepoItem[]>(() => {
 })
 
 const getAllRepos = async () => {
-  const tmpItems: ResponseItem[] = []
+  const tmpItems: Array<ResponseItem | ResponseItem[]> = []
   loading.value = true
   receivedResponse.value = false
   error.value = false

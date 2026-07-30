@@ -11,9 +11,10 @@ exports[`App.vue > gets all and recent repos on mounted > homepage 1`] = `
         <svg-defs-stub></svg-defs-stub>
         <main class="grow mb-2">
           <masthead-stub></masthead-stub>
-          <div>
-            <container-stub></container-stub>
+          <div class="bg-gray-100">
+            <repo-list-stub title="Recent Repos" items="[object Object],[object Object]" filter="false" showtitlecount="false" sort="false" paginate="false" pagesize="10"></repo-list-stub>
           </div>
+          <repo-list-stub title="All Repos" items="[object Object],[object Object]" filter="true" showtitlecount="true" sort="true" paginate="true" pagesize="10"></repo-list-stub>
         </main>
       </div>
     </section>
@@ -35,9 +36,10 @@ exports[`App.vue > matches snapshots > DoneLoading 1`] = `
         <svg-defs-stub></svg-defs-stub>
         <main class="grow mb-2">
           <masthead-stub></masthead-stub>
-          <div>
-            <container-stub></container-stub>
+          <div class="bg-gray-100">
+            <repo-list-stub title="Recent Repos" items="[object Object],[object Object]" filter="false" showtitlecount="false" sort="false" paginate="false" pagesize="10"></repo-list-stub>
           </div>
+          <repo-list-stub title="All Repos" items="[object Object],[object Object]" filter="true" showtitlecount="true" sort="true" paginate="true" pagesize="10"></repo-list-stub>
         </main>
       </div>
     </section>

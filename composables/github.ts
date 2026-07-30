@@ -2,12 +2,25 @@ export const useGithub = () => {
   return {
     api: async (name: string, type: string) => {
       const cmd = type === 'repo' ? '' : '/repos'
-      const data = await $fetch<ResponseItem>(`https://api.github.com/${type}s/${name}${cmd}`, {
+      const url = `https://api.github.com/${type}s/${name}${cmd}`
+      const getPage = (page = 1) => $fetch<ResponseItem[]>(url, {
         method: 'get',
-        query: {
-          per_page: 1000
-        }
+        query: { per_page: 100, page }
       })
+
+      if (type === 'repo') {
+        const data = await $fetch<ResponseItem>(url, { method: 'get' })
+        return { data: ref(data) }
+      }
+
+      const data: ResponseItem[] = []
+      let page = 1
+      let results: ResponseItem[]
+      do {
+        results = await getPage(page++)
+        data.push(...results)
+      } while (results.length === 100)
+
       return { data: ref(data) }
     },
     colors: useState('colors', () => ({
