@@ -12,6 +12,9 @@ export default defineNuxtConfig({
     head: {
       title: 'SEI Open Source @ GitHub',
       titleTemplate: '%s',
+      meta: [
+        { name: 'google-site-verification', content: 'tuB6hlCtTBaxkJLDTVF5QdXrY031DFO4w1p1fUBR0jA' },
+      ],
     },
   },
   css: [
