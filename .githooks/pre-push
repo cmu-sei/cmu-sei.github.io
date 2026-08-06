@@ -1,0 +1,170 @@
+#!/usr/bin/env bash
+#
+# Pre-push hook, runs:
+# - unit tests
+# - lint
+# - typecheck
+# - e2e tests
+#
+# Install via `npm run hooks:install`.
+
+set -uo pipefail
+
+# Colors (auto-disable if not a TTY).
+if [ -t 1 ]; then
+  IS_TTY=1
+  BOLD=$'\033[1m'; DIM=$'\033[2m'; RED=$'\033[31m'; GREEN=$'\033[32m'
+  YELLOW=$'\033[33m'; BLUE=$'\033[34m'; WHITE=$'\033[37m'
+  ORANGE=$'\033[38;5;208m'; RESET=$'\033[0m'
+else
+  IS_TTY=0
+  BOLD=''; DIM=''; RED=''; GREEN=''; YELLOW=''; BLUE=''; WHITE=''
+  ORANGE=''; RESET=''
+fi
+
+# Locate the baseline file under .git/. If we're not inside a git work tree
+# for some reason, leave BASELINE_FILE empty and degrade gracefully (no
+# baseline lookup, no baseline write, "?s" shown for expected duration).
+GIT_DIR="$(git rev-parse --git-dir 2>/dev/null || true)"
+if [ -n "$GIT_DIR" ] && [ -d "$GIT_DIR" ]; then
+  BASELINE_FILE="$GIT_DIR/prepush-baseline"
+else
+  BASELINE_FILE=""
+fi
+BAR_WIDTH=20
+
+step() {
+  printf "\n ${BOLD}${BLUE}-> %s${RESET} ${DIM}(%s)${RESET}\n" "$1" "$2"
+}
+
+# Read last-good duration (in seconds) for a given step key from BASELINE_FILE.
+# Echoes nothing if not present.
+baseline_get() {
+  local key="$1"
+  [ -n "$BASELINE_FILE" ] || return 0
+  [ -f "$BASELINE_FILE" ] || return 0
+  awk -F= -v k="$key" '$1 == k { print $2; exit }' "$BASELINE_FILE" 2>/dev/null || true
+}
+
+# Persist a new last-good duration for a step. Atomic via temp + mv.
+# Silently no-ops if we don't have a writable baseline location.
+baseline_set() {
+  local key="$1" value="$2" tmp
+  [ -n "$BASELINE_FILE" ] || return 0
+  tmp="$(mktemp -t prepush-baseline.XXXXXX 2>/dev/null)" || return 0
+  if [ -f "$BASELINE_FILE" ]; then
+    awk -F= -v k="$key" '$1 != k { print }' "$BASELINE_FILE" > "$tmp" 2>/dev/null || true
+  fi
+  printf "%s=%s\n" "$key" "$value" >> "$tmp"
+  mv "$tmp" "$BASELINE_FILE" 2>/dev/null || rm -f "$tmp"
+}
+
+# Pick a color based on elapsed/expected ratio.
+color_for_ratio() {
+  local pct=$1
+  if   [ "$pct" -lt 100 ]; then printf "%s" "$WHITE"
+  elif [ "$pct" -le 110 ]; then printf "%s" "$GREEN"
+  elif [ "$pct" -le 150 ]; then printf "%s" "$YELLOW"
+  elif [ "$pct" -le 200 ]; then printf "%s" "$ORANGE"
+  else                          printf "%s" "$RED"
+  fi
+}
+
+# Render a single progress-bar frame to the current line via \r.
+render_bar() {
+  local elapsed=$1 expected=$2
+  if [ -z "$expected" ] || [ "$expected" -le 0 ]; then
+    # No baseline yet (or baseline unavailable) — show elapsed against "?s".
+    printf "\r\033[K  ${DIM}%ss / ?s${RESET}" "$elapsed"
+    return
+  fi
+
+  local pct=$(( elapsed * 100 / expected ))
+  local fill_pct=$pct
+  [ "$fill_pct" -gt 100 ] && fill_pct=100
+  local filled=$(( fill_pct * BAR_WIDTH / 100 ))
+  local empty=$(( BAR_WIDTH - filled ))
+
+  local bar=""
+  local i=0
+  while [ "$i" -lt "$filled" ]; do bar+="█"; i=$((i+1)); done
+  i=0
+  while [ "$i" -lt "$empty" ];  do bar+="░"; i=$((i+1)); done
+
+  local color
+  color="$(color_for_ratio "$pct")"
+
+  if [ "$pct" -gt 100 ]; then
+    local over=$(( pct - 100 ))
+    printf "\r\033[K  ${color}[%s]${RESET} ${DIM}%ss / %ss${RESET} ${color}(+%s%%)${RESET}" \
+      "$bar" "$elapsed" "$expected" "$over"
+  else
+    printf "\r\033[K  ${color}[%s]${RESET} ${DIM}%ss / %ss${RESET}" \
+      "$bar" "$elapsed" "$expected"
+  fi
+}
+
+run_step() {
+  local label="$1"; shift
+  local cmd="$*"
+  local key
+  key="$(printf "%s" "$label" | tr -d ' ')"
+
+  local logfile
+  logfile="$(mktemp -t prepush.XXXXXX)"
+  step "$label" "$cmd"
+
+  local expected
+  expected="$(baseline_get "$key")"
+
+  local start=$SECONDS
+  # Run the actual command in the background so we can render progress
+  # alongside it. Tee output to a logfile for failure dumps.
+  ( eval "$cmd" ) >"$logfile" 2>&1 &
+  local pid=$!
+
+  # Make sure we don't leave a runaway child or a half-drawn line on Ctrl+C.
+  trap 'kill '"$pid"' 2>/dev/null; printf "\r\033[K\n"; exit 130' INT TERM
+
+  if [ "$IS_TTY" -eq 1 ]; then
+    while kill -0 "$pid" 2>/dev/null; do
+      local elapsed=$(( SECONDS - start ))
+      render_bar "$elapsed" "${expected:-0}"
+      sleep 1
+    done
+  fi
+
+  # Reap the child and grab its real exit code.
+  local rc=0
+  wait "$pid" || rc=$?
+
+  trap - INT TERM
+
+  # Clear the progress line before printing the final result.
+  [ "$IS_TTY" -eq 1 ] && printf "\r\033[K"
+
+  local elapsed=$(( SECONDS - start ))
+
+  if [ "$rc" -eq 0 ]; then
+    printf "  ${GREEN}✓ %s passed${RESET} ${DIM}(%ss)${RESET}\n" "$label" "$elapsed"
+    baseline_set "$key" "$elapsed"
+    rm -f "$logfile"
+  else
+    printf "  ${RED}✗ %s failed${RESET}\n" "$label"
+    printf "${DIM}--- output ---${RESET}\n"
+    cat "$logfile"
+    printf "${DIM}--------------${RESET}\n"
+    rm -f "$logfile"
+    printf "\n${RED}${BOLD}Push aborted.${RESET} Fix the failure above or re-run with ${BOLD}--no-verify${RESET} to bypass.\n"
+    exit "$rc"
+  fi
+}
+
+printf "${BOLD}Running pre-push checks${RESET}\n"
+
+run_step "tests    " "npm run test"
+run_step "eslint   " "npm run lint"
+run_step "typecheck" "npm run typecheck"
+#run_step "e2e tests" "npm run e2e:run"
+
+printf "\n${GREEN}${BOLD}All checks passed — pushing.${RESET}\n\n"

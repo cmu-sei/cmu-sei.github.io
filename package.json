@@ -9,20 +9,22 @@
     "postinstall": "nuxt prepare",
     "test": "npm run test:unit",
     "test:unit": "vitest run",
-    "deploy": "./deploy.sh"
+    "deploy": "./deploy.sh",
+    "typecheck": "nuxi typecheck",
+    "hooks:install": "mkdir -p .git/hooks && ln -sf .githooks/pre-push .git/hooks/pre-push && echo 'Linked .git/hooks/pre-push -> .githooks/pre-push'"
   },
   "type": "module",
   "devDependencies": {
     "@cmu-sei/sei-design-system": "^4.12.0",
-    "@nuxt/eslint": "^1.16.0",
+    "@nuxt/eslint": "^1.17.0",
     "@nuxt/test-utils": "^4.1.0",
     "@tailwindcss/vite": "^4.3.3",
-    "@vue/test-utils": "^2.4.6",
-    "happy-dom": "^20.8.1",
-    "nuxt": "^4.5.1",
+    "@vue/test-utils": "^2.4.11",
+    "happy-dom": "^20.11.1",
+    "nuxt": "^4.5.2",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3",
     "vitest": "^4.1.10",
-    "vue-tsc": "^3.3.5"
+    "vue-tsc": "^3.3.9"
   }
 }

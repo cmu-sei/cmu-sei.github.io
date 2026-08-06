@@ -19,7 +19,7 @@ git add -A
 git commit -m 'deploy' --allow-empty
 git branch -m "master"
 
-# if you are deploying to https://<USERNAME>.github.io
-git push -f git@github.com:cmu-sei/cmu-sei.github.io.git master
+# git push -f git@github.com:cmu-sei/cmu-sei.github.io.git master
+git push -f https://github.com/cmu-sei/cmu-sei.github.io.git master
 
 cd -
