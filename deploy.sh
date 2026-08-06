@@ -4,9 +4,12 @@
 set -e
 
 # run checks
-echo Running unit tests...
+echo "Unit tests..."
 npm test
+echo "Linting..."
 npm run lint
+echo "Typechecking..."
+npm run typecheck
 
 # build
 npm run generate
